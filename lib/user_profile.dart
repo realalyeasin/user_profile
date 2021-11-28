@@ -153,11 +153,11 @@ class UserProfile extends StatelessWidget {
                       ]),
                   child: ListTile(
                     leading: Icon(
-                      Icons.history,
+                      Icons.delivery_dining,
                       color: Colors.black,
                     ),
                     title: Text(
-                      'Order History',
+                      'Delivery Address',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
@@ -182,11 +182,11 @@ class UserProfile extends StatelessWidget {
                       ]),
                   child: ListTile(
                     leading: Icon(
-                      Icons.history,
+                      Icons.payment,
                       color: Colors.black,
                     ),
                     title: Text(
-                      'Order History',
+                      'Cards nd Payment',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
@@ -211,11 +211,11 @@ class UserProfile extends StatelessWidget {
                       ]),
                   child: ListTile(
                     leading: Icon(
-                      Icons.history,
+                      Icons.my_location,
                       color: Colors.black,
                     ),
                     title: Text(
-                      'Order History',
+                      'Tracking Orders',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
