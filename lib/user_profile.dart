@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'logout_login_page.dart';
+
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
 
@@ -43,7 +45,9 @@ class UserProfile extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home), title: Text('Home')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), title: Text('Settings'),),
+              icon: Icon(Icons.settings),
+              title: Text('Settings'),
+            ),
           ],
         ),
         drawer: Drawer(
@@ -58,7 +62,10 @@ class UserProfile extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       color: Colors.amberAccent,
-                      child: Icon(Icons.account_box, size: 150,),
+                      child: Icon(
+                        Icons.account_box,
+                        size: 150,
+                      ),
                     )),
               ),
               Divider(
@@ -205,14 +212,21 @@ class UserProfile extends StatelessWidget {
                     Positioned(
                         top: 135,
                         left: 180,
-                        child: Text(
-                          'Log Out',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 20,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold),
-                        ))
+                        child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LogoutLogin()));
+                            },
+                            child: Text(
+                              'Log Out',
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 20,
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold),
+                            )))
                   ],
                 ),
                 SizedBox(
@@ -296,7 +310,7 @@ class UserProfile extends StatelessWidget {
                       color: Colors.black,
                     ),
                     title: Text(
-                      'Cards nd Payment',
+                      'Cards and Payment',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
