@@ -24,6 +24,15 @@ class UserProfile extends StatelessWidget {
               width: 12,
             )
           ],
+          leading: Builder(
+            builder: (context) => IconButton(
+              icon: Icon(
+                Icons.all_inbox_outlined,
+                color: Colors.black,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.amberAccent,
@@ -34,8 +43,109 @@ class UserProfile extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home), title: Text('Home')),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), title: Text('Settings')),
+                icon: Icon(Icons.settings), title: Text('Settings'),),
           ],
+        ),
+        drawer: Drawer(
+          elevation: 16,
+          child: Column(
+            children: [
+              Container(
+                height: 230,
+                color: Colors.amberAccent[200],
+                child: Padding(
+                    padding: const EdgeInsets.all(38.0),
+                    child: Container(
+                      width: double.infinity,
+                      color: Colors.amberAccent,
+                      child: Icon(Icons.account_box, size: 150,),
+                    )),
+              ),
+              Divider(
+                height: 3,
+                thickness: 2,
+                color: Colors.amberAccent,
+              ),
+              ListTile(
+                tileColor: Colors.black,
+                title: Text(
+                  "Home",
+                  style: TextStyle(color: Colors.amberAccent),
+                ),
+                leading: Icon(Icons.home, color: Colors.amberAccent),
+              ),
+              Divider(
+                height: 3,
+                thickness: 1,
+                color: Colors.black,
+              ),
+              ListTile(
+                autofocus: true,
+                tileColor: Colors.black,
+                title: Text(
+                  "Profile",
+                  style: TextStyle(color: Colors.amberAccent),
+                ),
+                leading: Icon(
+                  Icons.account_box_outlined,
+                  color: Colors.amberAccent,
+                ),
+              ),
+              Divider(
+                height: 3,
+                thickness: 1,
+                color: Colors.amberAccent,
+              ),
+              ListTile(
+                tileColor: Colors.black,
+                title: Text(
+                  "Favorites",
+                  style: TextStyle(color: Colors.amberAccent),
+                ),
+                leading: Icon(
+                  Icons.favorite,
+                  color: Colors.amberAccent,
+                ),
+              ),
+              Divider(
+                height: 3,
+                thickness: 1,
+                color: Colors.amberAccent,
+              ),
+              ListTile(
+                tileColor: Colors.black,
+                title: Text(
+                  "Settings",
+                  style: TextStyle(color: Colors.amberAccent),
+                ),
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.amberAccent,
+                ),
+              ),
+              Divider(
+                height: 3,
+                thickness: 1,
+                color: Colors.amberAccent,
+              ),
+              ListTile(
+                tileColor: Colors.black,
+                title: Text(
+                  "Log Out",
+                  style: TextStyle(color: Colors.amberAccent),
+                ),
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.amberAccent,
+                ),
+              ),
+              Divider(
+                height: 3,
+                thickness: 1,
+                color: Colors.amberAccent,
+              ),
+            ],
+          ),
         ),
         body: Center(
           child: Padding(
