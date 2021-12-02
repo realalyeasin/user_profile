@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:user_profile/settings.dart';
 import 'logout_login_page.dart';
 
 class UserProfile extends StatelessWidget {
@@ -17,11 +17,16 @@ class UserProfile extends StatelessWidget {
                 fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
           ),
           actions: [
-            Icon(
-              Icons.settings,
-              size: 34,
-              color: Colors.black,
-            ),
+            IconButton(
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Settings()));},
+                icon: Icon(
+                  Icons.settings,
+                  size: 34,
+                  color: Colors.black,
+                )),
             SizedBox(
               width: 12,
             )
@@ -35,20 +40,6 @@ class UserProfile extends StatelessWidget {
               onPressed: () => Scaffold.of(context).openDrawer(),
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.amberAccent,
-          fixedColor: Colors.black,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person), title: Text('Profile')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), title: Text('Home')),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              title: Text('Settings'),
-            ),
-          ],
         ),
         drawer: Drawer(
           elevation: 16,
@@ -93,6 +84,10 @@ class UserProfile extends StatelessWidget {
                   "Profile",
                   style: TextStyle(color: Colors.amberAccent),
                 ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UserProfile()));
+                },
                 leading: Icon(
                   Icons.account_box_outlined,
                   color: Colors.amberAccent,
@@ -125,6 +120,10 @@ class UserProfile extends StatelessWidget {
                   "Settings",
                   style: TextStyle(color: Colors.amberAccent),
                 ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Settings()));
+                },
                 leading: Icon(
                   Icons.settings,
                   color: Colors.amberAccent,
@@ -141,6 +140,10 @@ class UserProfile extends StatelessWidget {
                   "Log Out",
                   style: TextStyle(color: Colors.amberAccent),
                 ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LogoutLogin()));
+                },
                 leading: Icon(
                   Icons.logout,
                   color: Colors.amberAccent,
@@ -153,6 +156,14 @@ class UserProfile extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.amberAccent,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.account_box, color: Colors.black,), title: Text('Profile', style: TextStyle(color: Colors.black),)),
+            BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black,), title: Text('Home', style: TextStyle(color: Colors.black),)),
+            BottomNavigationBarItem(icon: Icon(Icons.settings, color: Colors.black,), title: Text('Settings', style: TextStyle(color: Colors.black),)),
+          ],
         ),
         body: Center(
           child: Padding(
