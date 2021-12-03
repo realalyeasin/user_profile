@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:user_profile/user_profile.dart';
 
+import 'bottom_navigation.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: UserProfile(),
+      home: BottomNavigation(),
     );
   }
 }

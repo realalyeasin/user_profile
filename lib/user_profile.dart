@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:user_profile/settings.dart';
+import 'bottom_navigation.dart';
 import 'logout_login_page.dart';
 
 class UserProfile extends StatelessWidget {
@@ -71,6 +72,10 @@ class UserProfile extends StatelessWidget {
                   style: TextStyle(color: Colors.amberAccent),
                 ),
                 leading: Icon(Icons.home, color: Colors.amberAccent),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BottomNavigation()));
+                },
               ),
               Divider(
                 height: 3,
@@ -156,14 +161,6 @@ class UserProfile extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.amberAccent,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.account_box, color: Colors.black,), title: Text('Profile', style: TextStyle(color: Colors.black),)),
-            BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.black,), title: Text('Home', style: TextStyle(color: Colors.black),)),
-            BottomNavigationBarItem(icon: Icon(Icons.settings, color: Colors.black,), title: Text('Settings', style: TextStyle(color: Colors.black),)),
-          ],
         ),
         body: Center(
           child: Padding(

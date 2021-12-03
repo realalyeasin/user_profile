@@ -133,7 +133,7 @@ class Settings extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    height: 300,
+                    height: 250,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
