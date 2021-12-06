@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_profile/currentLocation.dart';
 import 'package:user_profile/settings.dart';
 import 'bottom_navigation.dart';
 import 'logout_login_page.dart';
@@ -54,9 +55,15 @@ class UserProfile extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       color: Colors.amberAccent,
-                      child: Icon(
-                        Icons.account_box,
-                        size: 150,
+                      child: UserAccountsDrawerHeader(
+                        accountName: Text('@alyeasin'),
+                        accountEmail: Text('yeasin@gmail.com'),
+                        currentAccountPicture: GestureDetector(
+                          child: CircleAvatar(
+                            backgroundColor: Colors.amberAccent,
+                            child: Icon(Icons.account_box, color: Colors.black,),
+                          ),
+                        ),
                       ),
                     )),
               ),
@@ -351,6 +358,9 @@ class UserProfile extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
+                    onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> CurrentLocation() ));
+                    },
                   ),
                 ),
               ],
