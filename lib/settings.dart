@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_profile/user_profile.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -142,7 +143,7 @@ class Settings extends StatelessWidget {
                           children: [
                             IconButton(
                                 onPressed: () {
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfile()));
                                 },
                                 icon: Icon(
                                   Icons.arrow_back,

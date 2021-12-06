@@ -49,22 +49,21 @@ class UserProfile extends StatelessWidget {
             children: [
               Container(
                 height: 230,
-                color: Colors.amberAccent[200],
+                color: Colors.black,
                 child: Padding(
                     padding: const EdgeInsets.all(38.0),
                     child: Container(
                       width: double.infinity,
-                      color: Colors.amberAccent,
-                      child: UserAccountsDrawerHeader(
-                        accountName: Text('@alyeasin'),
-                        accountEmail: Text('yeasin@gmail.com'),
-                        currentAccountPicture: GestureDetector(
-                          child: CircleAvatar(
-                            backgroundColor: Colors.amberAccent,
-                            child: Icon(Icons.account_box, color: Colors.black,),
-                          ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
+                          children: [
+                            Positioned(child: CircleAvatar(backgroundImage: AssetImage('images/me.jpg'), radius: 38, ), left: 55,),
+                            Positioned(child: Text('alyeasin', style: TextStyle(color: Colors.black, letterSpacing: 1, fontSize: 15, fontWeight: FontWeight.bold, backgroundColor: Colors.white),), top: 95, ),
+                            Positioned(child: Text('alyeasin@gmail.com', style: TextStyle(color: Colors.black, letterSpacing: 1, fontSize: 15, fontWeight: FontWeight.bold, backgroundColor: Colors.white),), top: 119, ),
+                          ],
                         ),
-                      ),
+                      )
                     )),
               ),
               Divider(
@@ -87,7 +86,7 @@ class UserProfile extends StatelessWidget {
               Divider(
                 height: 3,
                 thickness: 1,
-                color: Colors.black,
+                color: Colors.amberAccent,
               ),
               ListTile(
                 autofocus: true,
